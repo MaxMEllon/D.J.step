@@ -14,10 +14,10 @@
   .ChopDisk
     width: $DiskSize
     height: $DiskSize
-    // background-color: $DiskColor2
     background: linear-gradient(to bottom right, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#111111 60%,#090909 67%,#090909 67%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
     border-radius: $DiskSize
-    position: absolute
+    top: 1em
+    left: 1em
     z-index: 1
 
   .ChopDiskCentor
@@ -26,10 +26,10 @@
     width: $Size
     height: $Size
     background-color: yellow
-    top: $DiskSize / 2 - $Size / 2
-    left: $DiskSize / 2 - $Size / 2
-    position: absolute
     border-radius: $Size
+    margin-top: ($DiskSize) / 2 - $Size / 2
+    margin-left: ($DiskSize) / 2 - $Size / 2
+    display: inline-block
     z-index: 2
     -moz-box-shadow:    $Shadow
     -webkit-box-shadow: $Shadow

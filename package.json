@@ -6,6 +6,7 @@
     "cover": "abby test, report",
     "lint": "eslint src test",
     "build": "abby webpack --env",
+    "watch": "webpack --watch",
     "dev": "abby dev:*",
     "dev:build": "webpack",
     "dev:open": "wait-on http://localhost:8080 && opener http://localhost:8080/",

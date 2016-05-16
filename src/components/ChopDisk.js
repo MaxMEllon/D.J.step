@@ -2,6 +2,12 @@ import React from 'react';
 import debug from '../utils/debug';
 
 export default class ChopDisk extends React.Component {
+  static get propTypes() {
+    return {
+      style: React.PropTypes.object,
+    };
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -24,10 +30,12 @@ export default class ChopDisk extends React.Component {
   render() {
     debug('[R] : ChopDisk');
     return (
-      <div className="ChopDiskContainer">
-        <div className="ChopDiskOutLine">
+      <div
+        className="ChopDiskContainer"
+        style={ this.props.style }
+      > <div className={`ChopDiskOutLine ${this.state.className}`}>
           <div
-            className={`ChopDisk ${this.state.className}`}
+            className="ChopDisk"
             onMouseEnter={this.onDragStart}
             onMouseLeave={this.onDragEnd}
           > <div className="ChopDiskCentor">
