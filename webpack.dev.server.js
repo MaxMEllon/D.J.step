@@ -8,7 +8,8 @@ var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
   publicPath: config[0].output.publicPath,
   hot: true,
-  historyApiFallback: true,
+  inline: true,
+  historyApiFallback: false,
 });
 
 server.listen(8080);

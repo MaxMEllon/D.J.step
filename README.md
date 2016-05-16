@@ -14,4 +14,9 @@ $ npm install
 $ npm run dev
 ```
 
+LISENCE
+---
+
+- 3倍アイスクリーム : ニコニ・コモンズ ライセンス
+  - http://commons.nicovideo.jp/material/nc25452
 

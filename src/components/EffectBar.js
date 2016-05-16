@@ -17,6 +17,7 @@ export default class EffectBar extends React.Component {
   }
 
   onChangeValue(event) {
+    debug('[E] : <EffectBar> onChangeValue', 'green');
     this.setState({ range: event.target.value });
   }
 
@@ -25,13 +26,15 @@ export default class EffectBar extends React.Component {
     return (
       <div
         className="EffectBarContainer"
-        style={ this.props.style }
-      > <input
-        className="EffectBar"
-        type="range"
-        value={ this.state.value }
-        onChange={ this.onChangeValue }
-        />
+        style={ this.props.style } >
+        <input
+          min="-100"
+          max="100"
+          className="EffectBar"
+          type="range"
+          value={ this.state.value }
+          onChange={ this.onChangeValue }
+        ></input>
       </div>
     );
   }

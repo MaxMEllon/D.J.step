@@ -1,5 +1,6 @@
 import React from 'react';
 import debug from '../utils/debug';
+import SomebodyScream from '../utils/SomebodyScream';
 
 export default class RedEffectButton extends React.Component {
   static get propTypes() {
@@ -16,17 +17,29 @@ export default class RedEffectButton extends React.Component {
         background: 'linear-gradient(to bottom, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%)',
       },
     };
-    this.onClick = this.onClick.bind(this);
+    this.onPlay = this.onPlay.bind(this);
+    this.onStop = this.onStop.bind(this);
   }
 
-  onClick() {
-    debug('[E] : <RedEffectButton> onClick', 'green');
-    const effect = ! this.state.effect;
-    const bg = effect === true
-      ? 'linear-gradient(to bottom, #efc5ca 0%,#d24b5a 50%,#ba2737 51%,#f18e99 100%)'
-      : 'linear-gradient(to bottom, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%)';
+  onPlay() {
+    debug('[E] : <RedEffectButton> <-- onPlay', 'green');
+    const bg = 'linear-gradient(to bottom, #efc5ca 0%,#d24b5a 50%,#ba2737 51%,#f18e99 100%)';
+    const scream = new SomebodyScream();
+    scream.play();
     this.setState({
-      effect,
+      scream,
+      effect: true,
+      style: { background: bg },
+    });
+  }
+
+  onStop() {
+    debug('[E] : <RedEffectButton> --> onStop', 'green');
+    const bg = 'linear-gradient(to bottom, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%)';
+    this.state.scream.stop();
+    this.setState({
+      scream: null,
+      effect: false,
       style: { background: bg },
     });
   }
@@ -38,7 +51,8 @@ export default class RedEffectButton extends React.Component {
         <div
           className="RedEffectButton"
           style={ this.state.style }
-          onClick={ this.onClick }
+          onMouseDown={ this.onPlay }
+          onMouseUp={ this.onStop }
         />
       </div>
     );
