@@ -1,0 +1,48 @@
+.ChopDiskContainer
+  $DiskColor1: rgba(88, 88, 88, 1)
+  $DiskColor2: rgba(22, 22, 22, 1)
+  $DiskSize: 18em
+  .ChopDiskOutLine
+    $Pad: 1em
+    width: $DiskSize
+    height: $DiskSize
+    padding: $Pad
+    background: linear-gradient(to bottom, #45484d 0%,#000000 100%)
+    border-radius: $DiskSize + $Pad * 2
+    z-index: 0
+
+  .ChopDisk
+    width: $DiskSize
+    height: $DiskSize
+    // background-color: $DiskColor2
+    background: linear-gradient(to bottom right, #4c4c4c 0%,#595959 12%,#666666 25%,#474747 39%,#2c2c2c 50%,#111111 60%,#090909 67%,#090909 67%,#2b2b2b 76%,#1c1c1c 91%,#131313 100%)
+    border-radius: $DiskSize
+    position: absolute
+    z-index: 1
+
+  .ChopDiskCentor
+    $Size: 2em
+    $Shadow: 0.3em 0.3em 0.3em 0.3em rgba(0,0,0,0.4) inset
+    width: $Size
+    height: $Size
+    background-color: yellow
+    top: $DiskSize / 2 - $Size / 2
+    left: $DiskSize / 2 - $Size / 2
+    position: absolute
+    border-radius: $Size
+    z-index: 2
+    -moz-box-shadow:    $Shadow
+    -webkit-box-shadow: $Shadow
+    -o-box-shadow:      $Shadow
+    -ms-box-shadow:     $Shadow
+
+    &:after
+      display: block
+      position: absolute
+      top: 18%
+      left: 18%
+      border-radius: 50%
+      width: 20%
+      height: 20%
+      content: ""
+
