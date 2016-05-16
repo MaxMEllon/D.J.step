@@ -3,8 +3,12 @@ extends: airbnb
 parser: babel-eslint
 
 env:
+  es6: true
   node: true
   mocha: true
 
 rules:
-  semi
+  arrow-body-style: [1]
+  react/jsx-no-bind: [0]
+  react/prefer-stateless-function: [1]
+  prefer-stateless-function: [0]

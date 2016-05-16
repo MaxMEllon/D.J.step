@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import DJBoard from './components/DJBoard';
 import debug from './utils/debug';
 
-window.onload = function() {
+window.onload = function onLoadWindow() {
   ReactDOM.render(<DJBoard />, document.getElementById('main'));
   if (module.hot) {
-    module.hot.accept(function(err) {
-      if (err) console.error(err);
+    module.hot.accept(err => {
+      if (err) debug(err, 'white', 'red');
     });
   }
-}
+};
 
 // vim: ft=javascript.jsx
 
